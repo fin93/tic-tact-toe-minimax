@@ -124,8 +124,8 @@ def main():
                 print(f"\n{active} has won!")
                 break
             active = "x"
-    input()
-
+    if input("\n Wanna play again? [y/n] ").lower() == "y":
+        main()
 
 if __name__ == '__main__':
     main()
