@@ -13,7 +13,7 @@ def print_board(boar):
         print()
 
 
-def check_draw(boar):
+def check_draw(boar): 
     y = 0
     for i in range(3):
         for j in range(3):
