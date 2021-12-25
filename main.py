@@ -125,6 +125,9 @@ def main():
                 break
             active = "x"
     if input("\n Wanna play again? [y/n]: ").lower() == "y":
+        for i in range(3):
+            for j in range(3):
+                board[i][j] = "-"
         main()
 
 if __name__ == '__main__':
