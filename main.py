@@ -14,15 +14,11 @@ def print_board(boar):
 
 
 def check_draw(boar): 
-    y = 0
     for i in range(3):
         for j in range(3):
             if boar[i][j] == '-':
-                y = 1
-    if y == 1:
-        return False
-    else:
-        return True
+                return False
+    return True
 
 
 def wierd_mark(boar, a, b, a_p):
