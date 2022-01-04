@@ -116,5 +116,6 @@ def main(active = 'x'):
     if is_full(board):
         print("draw!")
     if input('do you want to play again [y/n]: ').lower() == 'y':
+        board.clear()
         main()
 main()
