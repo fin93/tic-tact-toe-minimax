@@ -95,7 +95,7 @@ def main(active = 'x'):
                 print_board(board)
                 if has_won(board, active):
                     print(f"{active} won!")
-                    exit()
+                    break
                 active = 'o'
         if active == 'o':
             comp_move(board)
@@ -103,7 +103,7 @@ def main(active = 'x'):
             print_board(board)
             if has_won(board, active):
                 print(f"{active} won!")
-                exit()
+                break
             active = 'x'
     print("draw!")
     if input('do you want to play again [y/n]: ').lower() == 'y':
