@@ -105,7 +105,8 @@ def main(active = 'x'):
                 print(f"{active} won!")
                 break
             active = 'x'
-    print("draw!")
+    if is_full(board):
+        print("draw!")
     if input('do you want to play again [y/n]: ').lower() == 'y':
         main()
 main()
