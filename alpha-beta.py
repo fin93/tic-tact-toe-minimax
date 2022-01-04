@@ -38,17 +38,23 @@ def has_won(board, active): # checks if has won
         return True 
 
 def comp_move(board):
-    best_score = -1000
+    best_score = -10000
+    alpha = -10000
+    beta = 10000
     best_mov, best_move = 0, 0
     for i in range(3):
         for j in range(3):
             if board[i][j] == '-':
                 board[i][j] = 'o'
-                score = minimax(board, -1000, 1000, False)
+                score = minimax(board, alpha, beta, False)
                 board[i][j] = '-'
                 if score > best_score:
                     best_score = score
                     best_mov, best_move = i, j
+                    if alpha < best_score:
+                        alpha = best_score
+                        if best_score >= beta:
+                            break
     mark_board(board, best_mov, best_move, 'o')
 
 def minimax(board, alpha, beta, is_max):
@@ -59,7 +65,7 @@ def minimax(board, alpha, beta, is_max):
     elif is_full(board):
         return 0
     if is_max:
-        best_score = -1000
+        best_score = -10000
         for i in range(3):
             for j in range(3):
                 if board[i][j] == '-':
@@ -75,7 +81,7 @@ def minimax(board, alpha, beta, is_max):
         return best_score
    
     if not is_max:
-        best_score = 1000
+        best_score = 10000
         for i in range(3):
             for j in range(3):
                 if board[i][j] == '-':
